@@ -1,4 +1,4 @@
-# Inmemori Http REST API
+**Inmemori Http REST API**
 ----
 
 ### Server
@@ -16,8 +16,8 @@ exemple: `/endpoint?token={yourapikey}`
   
   
 <br/>
-## Créer une page
 
+## Créer une page  
 
 ### `POST /users`
 
