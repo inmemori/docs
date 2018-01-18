@@ -32,7 +32,7 @@ exemple: `/endpoint?token={yourapikey}`
 ### Exemple
 
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/users' 
-      -H 'content-type: application/json' 
+    curl -X POST 'https://api.inmemori-dev.com/users' \
+      -H 'content-type: application/json' \
       -d '{ "firstname": "paul", "lastname": "cezane" }'
   ```
