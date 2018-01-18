@@ -1,14 +1,14 @@
 # Inmemori Http REST API
 ----
 
-###Server
+### Server
 
 | Env        | Url                              |
 |------------|----------------------------------|
 | production | `https://api.inmemori.com`       |
 | dev        | `https://api.inmemori-dev.com`   |
 
-###Authentification
+### Authentification
 
 Ajoutez votre `apikey` dans le `body` ou la `query` à chaque requêtes. 
 
@@ -19,7 +19,7 @@ exemple: `/endpoint?token={yourapikey}`
 ## Créer une page
 
 
-###`POST /users`
+### `POST /users`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
@@ -30,7 +30,7 @@ exemple: `/endpoint?token={yourapikey}`
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 
-###Exemple
+### Exemple
 
   ```curl
     curl -X POST 'https://api.inmemori-dev.com/users' 
