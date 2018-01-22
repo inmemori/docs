@@ -58,6 +58,7 @@ exemple: `/endpoint?token={yourapikey}`
                   , "address": "3 rue de Rivoli, 75014 Paris"
                   , "type": "ceremony"
                   , "date": "2018-12-19T11:45:00.000Z"
+                }
               ]
           }'
   ```
