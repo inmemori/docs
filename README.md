@@ -65,7 +65,7 @@ example: `/endpoint?token={yourapikey}`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| author          | `string `      | funeral counselor'name| Marc Leblanc                 |
+| author          | `string `      | counselor's name    | Marc Leblanc                   |
 | agency          | `string `      | agency's name       | Pompes Funèbres République     |
 
 
