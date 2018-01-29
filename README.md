@@ -27,11 +27,12 @@ exemple: `/endpoint?token={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | firstname       | `string`       | required            |                                |
 | lastname        | `string`       | required            |                                |
-| email           | `string`       |                     |                                |
+| email           | `string`       | required            |                                |
 | gender          | `string`       | `m` or `f`          |                                |
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | places          | `array(place)` |                     | see **place** schema           |
+| contact         | `array(contact)`|                     | see **contact** schema         |
 
 
 #### Place Schema
@@ -44,6 +45,14 @@ exemple: `/endpoint?token={yourapikey}`
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
 
 
+#### Contact Schema
+
+| Fields          | Type           | Info                | ex:                            |
+|-----------------|----------------|---------------------|--------------------------------|
+| name            | `string `      |                     | Sophie Dupont                  |
+| phone           | `string `      |                     | 0601020304                     |
+
+
 ### Exemple
 
   ```curl
@@ -54,11 +63,17 @@ exemple: `/endpoint?token={yourapikey}`
             , "lastname": "cezane" 
             , "places": [
                 { 
-                    "name: "Cimetière de Montparnasse"
+                    "name": "Cimetière de Montparnasse"
                   , "address": "3 rue de Rivoli, 75014 Paris"
                   , "type": "ceremony"
                   , "date": "2018-12-19T11:45:00.000Z"
                 }
               ]
+           , "contact" : [
+               { 
+                   "name" : "Sophie Dupont"
+                  ,"phone" : "0601020304"
+               }
+              ] 
           }'
   ```
