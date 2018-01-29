@@ -12,9 +12,9 @@ This Api accepts only `json`.
 
 ### Authentification
 
-Ajoutez votre `apikey` dans le `body` ou la `query` à chaque requête. 
+Add your `apikey` in the `body` or the `query` for each query. 
 
-exemple: `/endpoint?token={yourapikey}`
+example: `/endpoint?token={yourapikey}`
   
   
 <br/>
@@ -38,39 +38,39 @@ exemple: `/endpoint?token={yourapikey}`
 
 
 
-#### Place Schema : récupération des informations sur les différentes étapes des obsèques
+#### Place Schema : information on the ceremonies
 
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| date            | `isodate`      | date et heure       | 2018-12-19T11:45:00.000Z       |
-| name            | `string`       | nom du lieu         | Cimetière de Montparnasse      |
-| address         | `string`       | adresse du lieu     | 3 rue de Rivoli, 75014 Paris   |
+| date            | `isodate`      | date and time of ceremony| 2018-12-19T11:45:00.000Z       |
+| name            | `string`       | location of ceremony| Cimetière de Montparnasse      |
+| address         | `string`       | adress of ceremony  | 3 rue de Rivoli, 75014 Paris   |
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
 
 
 
-#### Contact Schema : récupération des informations sur l'organisateur des obsèques
+#### Contact Schema : information on the organizer of the memorial services
 
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| name            | `string `      | prénom et nom       | Sophie Dupont                  |
+| name            | `string `      | first and last names| Sophie Dupont                  |
 | phone           | `string `      |                     | 0601020304                     |
 
 
 
-#### Meta Schema : récupération des informations sur le créateur de la page
+#### Meta Schema : information on the page creator
 
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| author          | `string `      | nom du conseiller   | Marc Leblanc                   |
-| agency          | `string `      | nom de l'agence     | Pompes Funèbres République     |
+| author          | `string `      | funeral counselor'name| Marc Leblanc                 |
+| agency          | `string `      | agency's name       | Pompes Funèbres République     |
 
 
 
-### Exemple
+### Example
 
   ```curl
     curl -X POST 'https://api.inmemori-dev.com/users' \
