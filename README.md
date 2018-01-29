@@ -12,7 +12,7 @@ This Api accepts only `json`.
 
 ### Authentification
 
-Ajoutez votre `apikey` dans le `body` ou la `query` à chaque requêtes. 
+Ajoutez votre `apikey` dans le `body` ou la `query` à chaque requête. 
 
 exemple: `/endpoint?token={yourapikey}`
   
@@ -25,9 +25,9 @@ exemple: `/endpoint?token={yourapikey}`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| firstname       | `string`       | required            |                                |
-| lastname        | `string`       | required            |                                |
-| email           | `string`       | required            |                                |
+| firstname       | `string`       |                     |                                |
+| lastname        | `string`       |                     |                                |
+| email           | `string`       |                     |sophiedupont1289@mail.com       |
 | gender          | `string`       | `m` or `f`          |                                |
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
@@ -35,21 +35,21 @@ exemple: `/endpoint?token={yourapikey}`
 | contact         | `array(contact)`|                     | see **contact** schema         |
 
 
-#### Place Schema
+#### Place Schema : récupération des informations sur les différentes étapes des obsèques
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| date            | `isodate`      |                     | 2018-12-19T11:45:00.000Z       |
-| name            | `string`       |                     | Cimetière de Montparnasse      |
-| address         | `string`       |                     | 3 rue de Rivoli, 75014 Paris   |
+| date            | `isodate`      | date et heure       | 2018-12-19T11:45:00.000Z       |
+| name            | `string`       | nom du lieu         | Cimetière de Montparnasse      |
+| address         | `string`       | adresse du lieu     | 3 rue de Rivoli, 75014 Paris   |
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
 
 
-#### Contact Schema
+#### Contact Schema : récupération des informations sur l'organisateur des obsèques
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| name            | `string `      |                     | Sophie Dupont                  |
+| name            | `string `      | prénom et nom       | Sophie Dupont                  |
 | phone           | `string `      |                     | 0601020304                     |
 
 
@@ -60,7 +60,9 @@ exemple: `/endpoint?token={yourapikey}`
       -H 'content-type: application/json' \
       -d '{ 
               "firstname": "paul"
-            , "lastname": "cezane" 
+            , "lastname": "cezane"
+            , "email" : "sophiedupont1289@mail.com"
+            , "dod" : "2018-12-19T00:00:00.000Z"
             , "places": [
                 { 
                     "name": "Cimetière de Montparnasse"
