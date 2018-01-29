@@ -23,6 +23,7 @@ exemple: `/endpoint?token={yourapikey}`
 
 ### `POST /users`
 
+
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | firstname       | `string`       |                     |                                |
@@ -36,7 +37,9 @@ exemple: `/endpoint?token={yourapikey}`
 | meta            | `object`       |                     | see **meta** schema            |
 
 
+
 #### Place Schema : récupération des informations sur les différentes étapes des obsèques
+
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
@@ -46,7 +49,9 @@ exemple: `/endpoint?token={yourapikey}`
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
 
 
+
 #### Contact Schema : récupération des informations sur l'organisateur des obsèques
+
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
@@ -54,12 +59,15 @@ exemple: `/endpoint?token={yourapikey}`
 | phone           | `string `      |                     | 0601020304                     |
 
 
+
 #### Meta Schema : récupération des informations sur le créateur de la page
+
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | author          | `string `      | nom du conseiller   | Marc Leblanc                   |
 | agency          | `string `      | nom de l'agence     | Pompes Funèbres République     |
+
 
 
 ### Exemple
