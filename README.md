@@ -54,7 +54,7 @@ exemple: `/endpoint?token={yourapikey}`
 | phone           | `string `      |                     | 0601020304                     |
 
 
-#### Meta Schema : récupération des informations sur les agences qui créent des pages
+#### Meta Schema : récupération des informations sur le créateur de la page
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
