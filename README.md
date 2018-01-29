@@ -19,7 +19,7 @@ exemple: `/endpoint?token={yourapikey}`
   
 <br/>
 
-## Créer une page  
+## Create a page
 
 ### `POST /users`
 
