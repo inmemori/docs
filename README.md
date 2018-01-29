@@ -14,7 +14,7 @@ This Api accepts only `json`.
 
 Add your `apikey` in the `body` or the `query` for each query. 
 
-example: `/endpoint?token={yourapikey}`
+example: `/endpoint?apikey={yourapikey}`
   
   
 <br/>
