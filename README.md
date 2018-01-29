@@ -59,7 +59,7 @@ exemple: `/endpoint?token={yourapikey}`
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | author          | `string `      | nom du conseiller   | Marc Leblanc                   |
-| agency          | `string `      | nom de l'agence     | Rébillon Edgar Quinet          |
+| agency          | `string `      | nom de l'agence     | Pompes Funèbres République     |
 
 
 ### Exemple
@@ -88,7 +88,7 @@ exemple: `/endpoint?token={yourapikey}`
               ] 
             , "meta": {
                   "author" : "Marc Leblanc"
-                , "agency" : "Rébillon Edgar Quinet"
+                , "agency" : "Pompes Funèbres République"
               } 
           }'
   ```
