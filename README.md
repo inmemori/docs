@@ -32,7 +32,7 @@ exemple: `/endpoint?token={yourapikey}`
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | places          | `array(place)` |                     | see **place** schema           |
-| contact         | `array(contact)`|                     | see **contact** schema         |
+| contacts         | `array(contact)`|                     | see **contact** schema         |
 
 
 #### Place Schema : récupération des informations sur les différentes étapes des obsèques
@@ -71,7 +71,7 @@ exemple: `/endpoint?token={yourapikey}`
                   , "date": "2018-12-19T11:45:00.000Z"
                 }
               ]
-           , "contact" : [
+           , "contacts" : [
                { 
                    "name" : "Sophie Dupont"
                   ,"phone" : "0601020304"
