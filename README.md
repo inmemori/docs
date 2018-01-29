@@ -32,7 +32,8 @@ exemple: `/endpoint?token={yourapikey}`
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | places          | `array(place)` |                     | see **place** schema           |
-| contacts         | `array(contact)`|                     | see **contact** schema         |
+| contacts         | `array(contact)`|                     | see **contact** schema       |
+| meta            | `object (info source)` |                     | see ** info source** schema       |
 
 
 #### Place Schema : récupération des informations sur les différentes étapes des obsèques
@@ -51,6 +52,14 @@ exemple: `/endpoint?token={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | name            | `string `      | prénom et nom       | Sophie Dupont                  |
 | phone           | `string `      |                     | 0601020304                     |
+
+
+#### Info source Schema : récupération des informations sur les agences qui créent des pages
+
+| Fields          | Type           | Info                | ex:                            |
+|-----------------|----------------|---------------------|--------------------------------|
+| author          | `string `      | nom du conseiller   | Marc Leblanc                   |
+| agency          | `string `      | nom de l'agence     | Rébillon Edgar Quinet          |
 
 
 ### Exemple
@@ -77,5 +86,9 @@ exemple: `/endpoint?token={yourapikey}`
                   ,"phone" : "0601020304"
                }
               ] 
+           , "meta" : {
+                   "author" : "Marc Leblanc"
+                 , "agency" : "Rébillon Edgar Quinet"
+               } 
           }'
   ```
