@@ -32,8 +32,8 @@ exemple: `/endpoint?token={yourapikey}`
 | dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | places          | `array(place)` |                     | see **place** schema           |
-| contacts         | `array(contact)`|                     | see **contact** schema       |
-| meta            | `object (info source)` |                     | see ** info source** schema       |
+| contacts        | `array(contact)`|                    | see **contact** schema         |
+| meta            | `object`       |                     | see **meta** schema            |
 
 
 #### Place Schema : récupération des informations sur les différentes étapes des obsèques
@@ -54,7 +54,7 @@ exemple: `/endpoint?token={yourapikey}`
 | phone           | `string `      |                     | 0601020304                     |
 
 
-#### Info source Schema : récupération des informations sur les agences qui créent des pages
+#### Meta Schema : récupération des informations sur les agences qui créent des pages
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
@@ -80,15 +80,15 @@ exemple: `/endpoint?token={yourapikey}`
                   , "date": "2018-12-19T11:45:00.000Z"
                 }
               ]
-           , "contacts" : [
-               { 
-                   "name" : "Sophie Dupont"
-                  ,"phone" : "0601020304"
-               }
+            , "contacts": [
+                { 
+                    "name" : "Sophie Dupont"
+                  , "phone" : "0601020304"
+                }
               ] 
-           , "meta" : {
-                   "author" : "Marc Leblanc"
-                 , "agency" : "Rébillon Edgar Quinet"
-               } 
+            , "meta": {
+                  "author" : "Marc Leblanc"
+                , "agency" : "Rébillon Edgar Quinet"
+              } 
           }'
   ```
