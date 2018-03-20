@@ -77,7 +77,8 @@ example: `/endpoint?apikey={yourapikey}`
     curl -X POST 'https://api.inmemori-dev.com/users' \
       -H 'content-type: application/json' \
       -d '{ 
-              "firstname": "paul"
+               "lang" : "fr"
+            ,  "firstname": "paul"
             , "lastname": "cezane"
             , "email" : "sophiedupont1289@mail.com"
             , "dod" : "2018-12-19T00:00:00.000Z"
