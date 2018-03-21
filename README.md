@@ -27,6 +27,7 @@ example: `/endpoint?apikey={yourapikey}`
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | lang            | `string`       |`fr` or `en`         | if French, tag the 'fr' language|
+| tz              | `string`       |`Europe/France`      | specify time zone since date is stocked in UTC standard|
 | firstname       | `string`       |                     |                                |
 | lastname        | `string`       |                     |                                |
 | email           | `string`       |                     |sophiedupont1289@mail.com       |
