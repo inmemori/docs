@@ -49,6 +49,7 @@ example: `/endpoint?apikey={yourapikey}`
 | name            | `string`       | location of ceremony| Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | 3 rue de Rivoli, 75014 Paris   |
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
+| privacy         | `boolean`      | true or false |     |
 
 
 
