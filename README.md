@@ -10,7 +10,7 @@
 <br/>
 This Api accepts only `json`.
 
-### Authentification
+### Identification
 
 Add your `apikey` in the `body` or the `query` for each query. 
 
