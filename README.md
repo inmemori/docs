@@ -26,6 +26,7 @@ example: `/endpoint?apikey={yourapikey}`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
+| db              | `string`       |`EU` or `US`         | will determine where the data is stocked|
 | lang            | `string`       |`fr` or `en`         | if French, tag the 'fr' language|
 | tz              | `string`       |`Europe/France`      | specify time zone since date is stocked in UTC standard|
 | firstname       | `string`       |                     |                                |
@@ -79,7 +80,8 @@ example: `/endpoint?apikey={yourapikey}`
     curl -X POST 'https://api.inmemori-dev.com/users' \
       -H 'content-type: application/json' \
       -d '{ 
-               "lang" : "fr"
+               "db" : "EU"
+            ,  "lang" : "fr"
             ,  "firstname": "paul"
             , "lastname": "cezane"
             , "email" : "sophiedupont1289@mail.com"
