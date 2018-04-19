@@ -80,7 +80,7 @@ example: `/endpoint?apikey={yourapikey}`
     curl -X POST 'https://api.inmemori-dev.com/users' \
       -H 'content-type: application/json' \
       -d '{ 
-               "db" : "EU"
+               "db" : "eu"
             ,  "lang" : "fr"
             ,  "firstname": "paul"
             , "lastname": "cezane"
