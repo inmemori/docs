@@ -28,7 +28,7 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | db              | `string`       |`eu` or `us`         | will determine where the data is stocked|
 | lang            | `string`       |`fr` or `en`         | if French, tag the 'fr' language|
-| tz              | `string`       |`Europe/France` or 'America/New_York'      | specify time zone since date is stocked in UTC standard|
+| tz              | `string`       |`Europe/France` or `America/New_York`| specify time zone since date is stocked in UTC standard|
 | firstname       | `string`       |                     |                                |
 | lastname        | `string`       |                     |                                |
 | email           | `string`       |                     |sophiedupont1289@mail.com       |
@@ -70,7 +70,7 @@ example: `/endpoint?apikey={yourapikey}`
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | author          | `string `      | counselor's name    | Marc Leblanc                   |
-| agency          | `string `      | agency's name       | Pompes Funèbres République ; Smith Funeral services    |
+| agency          | `string `      | agency's name       | Smith Funeral services ; Pompes Funèbres République|
 
 
 
