@@ -61,7 +61,7 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | name            | `string `      | first and last names| Sophie Dupont                  |
 | phone           | `string `      |                     |818 257 1190 ; 06 01 02 03 04                     |
-| relationship to the deceased   | `string `      |                     |Child    |
+| relationship  | `string `      |relationship to the deceased      |Child    |
 | address           | `string `      | contact perosnal adress                     |20 rue du Louvre, 75001 Paris         |
 
 
