@@ -28,7 +28,7 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | db              | `string`       |`eu` or `us`         | will determine where the data is stocked|
 | country         | `string`       |`fr` or `us` or `mx` | will determine features availability according |
-| lang            | `string`       |`fr` or `en`         | if French, tag the 'fr' language|
+| lang            | `string`       |`fr` or `en` or `es` or `de`| if French, tag the 'fr' language|
 | tz              | `string`       |`Europe/France` or `America/New_York`| specify time zone since date is stocked in UTC standard|
 | firstname       | `string`       |                     |                                |
 | lastname        | `string`       |                     |                                |
