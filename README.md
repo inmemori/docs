@@ -103,6 +103,7 @@ example: `/endpoint?apikey={yourapikey}`
                 { 
                     "name" : "Sophie Dupont"
                   , "phone" : "0601020304"
+                  , "email" : "familledupont@mail.com"
                 }
               ] 
             , "meta": {
