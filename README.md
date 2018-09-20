@@ -1,4 +1,4 @@
-# Inmemori Http REST API  
+# InMemori Http REST API  
 
 ### Server
 
