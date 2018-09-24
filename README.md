@@ -24,21 +24,18 @@ example: `/endpoint?apikey={yourapikey}`
 ### `POST /users`
 
 
-| Fields          | Type           | Info                | ex:                            |
-|-----------------|----------------|---------------------|--------------------------------|
-| db              | `string`       |`eu` or `us`         | will determine where the data is stocked|
-| country         | `string`       |`fr` or `us` or `mx` | will determine features availability according |
-| lang            | `string`       |`fr` or `en` or `es` or `de`| if French, tag the 'fr' language|
-| tz              | `string`       |`Europe/France` or `America/New_York`or `America/Mexico_City`or `America/Tijuana`| specify time zone since date is stocked in UTC standard|
-| firstname       | `string`       |                     |                                |
-| lastname        | `string`       |                     |                                |
-| email           | `string`       |                     |sophiedupont1289@mail.com       |
-| gender          | `string`       | `m` or `f`          |                                |
-| dob             | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
-| dod             | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
-| places          | `array(place)` |                     | see **place** schema           |
-| contacts        | `array(contact)`|                    | see **contact** schema         |
-| meta            | `object`       |                     | see **meta** schema            |
+| Fields          | required| Type           | Info                | ex:                            |
+|-----------------|---------|----------------|---------------------|--------------------------------|
+| zone            |    *    | `string`       | `fr`, `us`, `mx`    | Users must be bind to a business zone |
+| firstname       |    *    | `string`       |                     |                                |
+| lastname        |    *    | `string`       |                     |                                |
+| email           |    *    | `string`       |                     | sophiedupont1289@mail.com      |
+| dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
+| dob             |         | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
+| gender          |         | `string`       | `m` or `f`          |                                |
+| places          |         | `array(place)` |                     | see **place** schema           |
+| contacts        |         | `array(contact)`|                    | see **contact** schema         |
+| meta            |         | `object`       |                     | see **meta** schema            |
 
 
 
@@ -49,7 +46,7 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | date            | `isodate`      | date and time of ceremony| 2018-12-19T11:45:00.000Z       |
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
-| address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris   |
+| address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
 | privacy         | `boolean`      | 'true' or 'false' |     |
 
@@ -62,9 +59,9 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | name            | `string `      | first and last names| Sophie Dupont                  |
 | phone           | `string `      |                     |818 257 1190 ; 06 01 02 03 04                     |
-| email  | `string `      |contact email      |maria123@mail.com    |
-| relationship  | `string `      |relationship to the deceased      |Child    |
-| address           | `string `      | contact perosnal adress                     |20 rue du Louvre, 75001 Paris         |
+| email           | `string `      |contact email        |maria123@mail.com    |
+| relationship    | `string `      |relationship to the deceased      |Child    |
+| address         | `string `      | contact perosnal adress                     |20 rue du Louvre, 75001 Paris         |
 
 
 
@@ -84,13 +81,12 @@ example: `/endpoint?apikey={yourapikey}`
     curl -X POST 'https://api.inmemori-dev.com/users' \
       -H 'content-type: application/json' \
       -d '{ 
-               "db" : "eu"
-            , "country" : "fr"   
-            ,  "lang" : "fr"
-            ,  "firstname": "paul"
+              "zone" : "fr"
+            , "firstname": "paul"
             , "lastname": "cezane"
-            , "email" : "sophiedupont1289@mail.com"
-            , "dod" : "2018-12-19T00:00:00.000Z"
+            , "email": "sophiedupont1289@mail.com"
+            , "dod": "2018-12-19T00:00:00.000Z"
+            , "dob": "1964-04-12T00:00:00.000Z"
             , "places": [
                 { 
                     "name": "Cimetière de Montparnasse"
@@ -101,14 +97,14 @@ example: `/endpoint?apikey={yourapikey}`
               ]
             , "contacts": [
                 { 
-                    "name" : "Sophie Dupont"
-                  , "phone" : "0601020304"
-                  , "email" : "familledupont@mail.com"
+                    "name": "Sophie Dupont"
+                  , "phone": "0601020304"
+                  , "email": "familledupont@mail.com"
                 }
               ] 
             , "meta": {
-                  "author" : "Marc Leblanc"
-                , "agency" : "Pompes Funèbres République"
+                  "author": "Marc Leblanc"
+                , "agency": "Pompes Funèbres République"
               } 
           }'
   ```
