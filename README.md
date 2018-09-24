@@ -48,7 +48,7 @@ example: `/endpoint?apikey={yourapikey}`
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
-| privacy         | `boolean`      | 'true' or 'false' |     |
+| privacy         | `boolean`      | default `false`     |     |
 
 
 
