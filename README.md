@@ -26,7 +26,6 @@ example: `/endpoint?apikey={yourapikey}`
 
 | Fields          | required| Type           | Info                | ex:                            |
 |-----------------|---------|----------------|---------------------|--------------------------------|
-| zone            |    *    | `string`       | `fr`, `us`, `mx`    | Users must be bind to a business zone |
 | firstname       |    *    | `string`       |                     |                                |
 | lastname        |    *    | `string`       |                     |                                |
 | email           |    *    | `string`       |                     | sophiedupont1289@mail.com      |
@@ -78,11 +77,10 @@ example: `/endpoint?apikey={yourapikey}`
 ### Example
 
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/users' \
+    curl -X POST 'https://api.inmemori-dev.com/users?apikey=xxx' \
       -H 'content-type: application/json' \
       -d '{ 
-              "zone" : "fr"
-            , "firstname": "paul"
+              "firstname": "paul"
             , "lastname": "cezane"
             , "email": "sophiedupont1289@mail.com"
             , "dod": "2018-12-19T00:00:00.000Z"
