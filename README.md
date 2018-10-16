@@ -60,7 +60,7 @@ example: `/endpoint?apikey={yourapikey}`
 | phone           | `string `      |number of the claimant                     |818 257 1190 ; 06 01 02 03 04                     |
 | email           | `string `      |contact email        |familledupont@mail.com    |
 | relationship    | `string `      |relationship to the deceased      |Child    |
-| address         | `string `      | contact perosnal adress                     |20 rue du Louvre, 75001 Paris         |
+| address         | `string `      | contact perosnal address                     |20 rue du Louvre, 75001 Paris         |
 
 
 
