@@ -27,7 +27,7 @@ example: `/endpoint?apikey={yourapikey}`
 | Fields          | required| Type           | Info                | ex:                            |
 |-----------------|---------|----------------|---------------------|--------------------------------|
 | firstname       |    *    | `string`       |firstname of the deceased                     |                                |
-| lastname        |    *    | `string`       |firstname of the deceased                     |                                |
+| lastname        |    *    | `string`       |lastname of the deceased                     |                                |
 | email           |    *    | `string`       |email of the claimant                     | sophiedupont1289@mail.com      |
 | dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | dob             |         | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
