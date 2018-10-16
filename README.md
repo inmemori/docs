@@ -56,8 +56,8 @@ example: `/endpoint?apikey={yourapikey}`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| name            | `string `      | first and last names| Sophie Dupont                  |
-| phone           | `string `      |                     |818 257 1190 ; 06 01 02 03 04                     |
+| name            | `string `      |first and last names of the claimant| Sophie Dupont                  |
+| phone           | `string `      |number of the claimant                     |818 257 1190 ; 06 01 02 03 04                     |
 | email           | `string `      |contact email        |familledupont@mail.com    |
 | relationship    | `string `      |relationship to the deceased      |Child    |
 | address         | `string `      | contact perosnal adress                     |20 rue du Louvre, 75001 Paris         |
