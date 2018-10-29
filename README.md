@@ -32,7 +32,7 @@ example: `/endpoint?apikey={yourapikey}`
 | dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | dob             |         | `isodate`      | date of birth       | 1986-12-19T00:00:00.000Z       |
 | gender          |         | `string`       | `m` or `f`          |                                |
-| contract_number          |         | `string`       | Client contract number          |                                |
+| contract_number          |         | `string`       | client contract number          |                                |
 | places          |         | `array(place)` |                     | see **place** schema           |
 | contacts        |         | `array(contact)`|                    | see **contact** schema         |
 | meta            |         | `object`       |                     | see **meta** schema            |
