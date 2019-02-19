@@ -46,6 +46,7 @@ example: `/endpoint?apikey={yourapikey}`
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
 | date            | `isodate`      | date and time of ceremony| 2018-12-19T11:45:00.000Z       |
+| tz            | `string`       | time zone| Europe/Paris ; America/Mexico_Ciy ; America/New_York  |
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
