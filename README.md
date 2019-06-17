@@ -34,7 +34,7 @@ example: `/endpoint?apikey={yourapikey}`
 | dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
 | dob             |         | `isodate`      | date of birth       | 1946-04-11T00:00:00.000Z       |
 | gender          |         | `string`       | `m` or `f`          |                                |
-| intro          |         | `string`       | annoucnement          | free text                               |
+| intro          |         | `string`       | announcement          | free text                               |
 | places          |         | `array(place)` |                     | see **place** schema           |
 | contacts        |         | `array(contact)`|                    | see **contact** schema         |
 | meta            |         | `object`       |                     | see **meta** schema            |
