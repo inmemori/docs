@@ -29,6 +29,7 @@ example: `/endpoint?apikey={yourapikey}`
 | firstname       |    *    | `string`       |firstname of the deceased                     |                                |
 | lastname        |    *    | `string`       |lastname of the deceased                     |                                |
 | email           |    *    | `string`       |email of the claimant                     | sophiedupont1289@mail.com      |
+| phone             |         | `string`      | phone number      |       |
 | db             |         | `string`      | database's location       | `us`or `eu`       |
 | zone             |         | `string`      | zone 's location       | `fr`, `us`, `mx`,`de`, `es`, `be`, `ch`       |
 | dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
