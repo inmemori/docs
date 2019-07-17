@@ -76,7 +76,7 @@ example: `/endpoint?apikey={yourapikey}`
 |-----------------|----------------|---------------------|--------------------------------|
 | author          | `string `      | counselor's name    | Marc Leblanc                   |
 | agency          | `string `      | agency's name       | Smith Funeral services ; Pompes Funèbres République|
-| agency_code     | `string `      | identification number if any       | if any|
+| agency_code     | `string `      | identification number if any       | AGC01 |
 | note            | `string `      | additional information       | comments if any|
 
 
