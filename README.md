@@ -12,7 +12,7 @@ This Api accepts only `json`.
 
 ### Identification
 
-Add your `jwc` in the `body` or the `query` for each query. 
+Add your `jwt` in the `body` or the `query` for each query. 
 
 example: `/endpoint?jwt={yourjwt}`
   
