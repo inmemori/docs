@@ -14,7 +14,7 @@ This Api accepts only `json`.
 
 Add your `jwc` in the `body` or the `query` for each query. 
 
-example: `/endpoint?jwc={yourjwc}`
+example: `/endpoint?jwt={yourjwt}`
   
   
 <br/>
@@ -84,7 +84,7 @@ example: `/endpoint?jwc={yourjwc}`
 ### Example
 
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/users?jwc=xxx' \
+    curl -X POST 'https://api.inmemori-dev.com/users?jwt=xxx' \
       -H 'content-type: application/json' \
       -d '{ 
               "firstname": "paul"
