@@ -12,9 +12,9 @@ This Api accepts only `json`.
 
 ### Identification
 
-Add your `apikey` in the `body` or the `query` for each query. 
+Add your `jwc` in the `body` or the `query` for each query. 
 
-example: `/endpoint?apikey={yourapikey}`
+example: `/endpoint?jwc={yourjwc}`
   
   
 <br/>
@@ -84,7 +84,7 @@ example: `/endpoint?apikey={yourapikey}`
 ### Example
 
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/users?apikey=xxx' \
+    curl -X POST 'https://api.inmemori-dev.com/users?jwc=xxx' \
       -H 'content-type: application/json' \
       -d '{ 
               "firstname": "paul"
