@@ -47,8 +47,8 @@ example: `/endpoint?jwt={yourjwt}`
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
-| date            | `isodate`      | date and time of ceremony| 2018-12-19T11:45:00.000Z       |
-| tz            | `string`       | time zone| Europe/Paris ; America/Mexico_City ; America/New_York  |
+| date            | `isodate`      | date of ceremony at Zulu time (UTC-0)| ex: for an event the 03 dec at 10:30AM in Paris, the correct date would be `2020-12-03T09:30:00.000Z`       |
+| tz            | `string`       | time zone| a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) `Europe/Paris`, `America/Mexico_City`...  |
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
