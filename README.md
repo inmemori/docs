@@ -13,12 +13,8 @@ This API accepts only `json` as content type.
 
 ### Identification
 
-Add your `jwt` in the `body` or the `query` for each query. 
-
-example: `/endpoint?jwt={yourjwt}`
-  
-  
-<br/>
+Provide your `jwt` token in the `body` or `query` of each requests made to this API.  
+For better security we recommend passing the `jwt` in the request `authorization` header (see exemple at the end).
 
 ## Create a page
 
@@ -83,12 +79,14 @@ example: `/endpoint?jwt={yourjwt}`
 
 
 ### Example
-
-Primary claimant is Alice Smith
-Secondary contact is Bob Stuart
+- `jwt` token is `xxx`
+- deceased name is `Paul Cezane`
+- primary claimant is `Alice Smith`
+- secondary contact is `Bob Stuart`
 
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/pages?jwt=xxx' \
+    curl -X POST 'https://api.inmemori-dev.com/pages' \
+      -H 'authorization: JWT xxx'
       -H 'content-type: application/json' \
       -d '{ 
               "firstname": "paul"
