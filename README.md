@@ -7,8 +7,9 @@
 | production | `https://api.inmemori.com`       |
 | dev        | `https://api.inmemori-dev.com`   |
 
-<br/>
-This Api accepts only `json`.
+<br/>  
+
+This API accepts only `json` as content type.  
 
 ### Identification
 
@@ -21,24 +22,23 @@ example: `/endpoint?jwt={yourjwt}`
 
 ## Create a page
 
-### `POST /users`
+### `POST /pages`
 
 
-| Fields          | required| Type           | Info                | ex:                            |
-|-----------------|---------|----------------|---------------------|--------------------------------|
-| firstname       |    *    | `string`       |firstname of the deceased                     |                                |
-| lastname        |    *    | `string`       |lastname of the deceased                     |                                |
-| email           |    *    | `string`       |email of the claimant                     | sophiedupont1289@mail.com      |
-| phone             |         | `string`      | phone number      |       |
-| db             |         | `string`      | database's location       | `us`or `eu`       |
-| zone             |         | `string`      | zone 's location       | `fr`, `us`, `mx`,`de`, `es`, `be`, `ch`       |
-| dod             |         | `isodate`      | date of death       | 2018-12-19T00:00:00.000Z       |
-| dob             |         | `isodate`      | date of birth       | 1946-04-11T00:00:00.000Z       |
-| gender          |         | `string`       | `m` or `f`          |                                |
-| intro          |         | `string`       | announcement          | free text                               |
-| places          |         | `array(place)` |                     | see **place** schema           |
-| contacts        |         | `array(contact)`|                    | see **contact** schema         |
-| meta            |         | `object`       |                     | see **meta** schema            |
+| Fields          | required| Type           | Info                               | ex:                            |
+|-----------------|---------|----------------|------------------------------------|--------------------------------|
+| firstname       |    *    | `string`        | firstname of the deceased         | |
+| lastname        |    *    | `string`        | lastname of the deceased          | |
+| email           |    *    | `string`        | email of the claimant             | contact1@mail.com |
+| phone           |         | `string`        | mobile phone of the claimant      | +33600000000 |
+| db              |         | `string`        | database's location               | `us`or `eu` |
+| zone            |         | `string`        | zone 's location                  | `fr,us,mx,de,es,be,ch` |
+| dod             |         | `isodate`       | date of death                     | 2018-12-19T00:00:00.000Z |
+| dob             |         | `isodate`       | date of birth                     | 1946-04-11T00:00:00.000Z |
+| gender          |         | `string`        | `m` or `f`                        | |
+| places          |         | `array(place)`  |                                   | see **place** schema |
+| contacts        |         | `array(contact)`|                                   | see **contact** schema |
+| meta            |         | `object`        |                                   | see **meta** schema |
 
 
 
@@ -59,39 +59,44 @@ example: `/endpoint?jwt={yourjwt}`
 #### Contact Schema : information on the organizer of the memorial services
 
 
-| Fields          | Type           | Info                | ex:                            |
-|-----------------|----------------|---------------------|--------------------------------|
-| name            | `string `      |first and last names of the claimant| Sophie Dupont                  |
-| phone           | `string `      |number of the claimant                     |818 257 1190 ; 06 01 02 03 04                     |
-| email           | `string `      |contact email        |familledupont@mail.com    |
-| relationship    | `string `      |relationship to the deceased      |Child    |
-| address         | `string `      | contact perosnal address                     |20 rue du Louvre, 75001 Paris         |
+| Fields          | Type           | Info                              | ex:                            |
+|-----------------|----------------|-----------------------------------|--------------------------------|
+| name            | `string `      | Fullname of the claimant          | Bob Stuart |
+| phone           | `string `      | contact mobile number             | +33600000000 |
+| email           | `string `      | contact email                     | bob@mail.com |
+| relationship    | `string `      | relationship to the deceased      | child/parent/friend |
+| address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
 
 
 
 #### Meta Schema : information on the page creator
 
 
-| Fields          | Type           | Info                | ex:                            |
-|-----------------|----------------|---------------------|--------------------------------|
-| author          | `string `      | counselor's name    | Marc Leblanc                   |
-| agency          | `string `      | agency's name       | Smith Funeral services ; Pompes Funèbres République|
-| agency_code     | `string `      | identification number if any       | AGC01 |
-| note            | `string `      | additional information       | comments if any|
+| Fields          | Type           | Info                              | ex:                            |
+|-----------------|----------------|-----------------------------------|--------------------------------|
+| author          | `string `      | counselor's name                  | Marc Leblanc |
+| agency          | `string `      | agency's name                     | Smith Funeral services / Pompes Funèbres République |
+| agency_code     | `string `      | identification number if any      | AGC01 |
+| note            | `string `      | additional information            | comments if any |
+| managerName     | `string `      | primary claimant name             | Alice Smith |
 
 
 
 ### Example
 
+Primary claimant is Alice Smith
+Secondary contact is Bob Stuart
+
   ```curl
-    curl -X POST 'https://api.inmemori-dev.com/users?jwt=xxx' \
+    curl -X POST 'https://api.inmemori-dev.com/pages?jwt=xxx' \
       -H 'content-type: application/json' \
       -d '{ 
               "firstname": "paul"
             , "lastname": "cezane"
-            , "email": "sophiedupont1289@mail.com"
             , "dod": "2018-12-19T00:00:00.000Z"
             , "dob": "1964-04-12T00:00:00.000Z"
+            , "email": "alice@gmail.com"
+            , "phone": "+33600000001"
             , "places": [
                 { 
                     "name": "Cimetière de Montparnasse"
@@ -102,14 +107,15 @@ example: `/endpoint?jwt={yourjwt}`
               ]
             , "contacts": [
                 { 
-                    "name": "Sophie Dupont"
-                  , "phone": "0601020304"
-                  , "email": "familledupont@mail.com"
+                    "name": "Bob Stuart"
+                  , "phone": "+33600000002"
+                  , "email": "bob@gmail.com"
                 }
               ] 
             , "meta": {
                   "author": "Marc Leblanc"
                 , "agency": "Pompes Funèbres République"
+                , "managerName": "Alice Smith"
               } 
           }'
   ```
