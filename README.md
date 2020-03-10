@@ -25,12 +25,12 @@ For better security we recommend passing the `jwt` in the request `authorization
 |-----------------|---------|----------------|------------------------------------|--------------------------------|
 | firstname       |    *    | `string`        | firstname of the deceased         | |
 | lastname        |    *    | `string`        | lastname of the deceased          | |
+| dod             |         | `isodate`       | date of death                     | 2018-12-19T00:00:00.000Z |
+| dob             |         | `isodate`       | date of birth                     | 1946-04-11T00:00:00.000Z |
 | email           |    *    | `string`        | email of the claimant             | contact1@mail.com |
 | phone           |         | `string`        | mobile phone of the claimant      | +33600000000 |
 | db              |         | `string`        | database's location               | `us`or `eu` |
 | zone            |         | `string`        | zone 's location                  | `fr,us,mx,de,es,be,ch` |
-| dod             |         | `isodate`       | date of death                     | 2018-12-19T00:00:00.000Z |
-| dob             |         | `isodate`       | date of birth                     | 1946-04-11T00:00:00.000Z |
 | gender          |         | `string`        | `m` or `f`                        | |
 | places          |         | `array(place)`  |                                   | see **place** schema |
 | contacts        |         | `array(contact)`|                                   | see **contact** schema |
@@ -52,7 +52,7 @@ For better security we recommend passing the `jwt` in the request `authorization
 
 
 
-#### Contact Schema : information on the organizer of the memorial services
+#### Contact Schema : information on the contacts/managers of the page
 
 
 | Fields          | Type           | Info                              | ex:                            |
@@ -65,7 +65,7 @@ For better security we recommend passing the `jwt` in the request `authorization
 
 
 
-#### Meta Schema : information on the page creator
+#### Meta Schema : additionnal page informations
 
 
 | Fields          | Type           | Info                              | ex:                            |
