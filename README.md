@@ -27,8 +27,6 @@ For better security we recommend passing the `jwt` in the request `authorization
 | lastname        |    *    | `string`        | lastname of the deceased          | |
 | dod             |         | `isodate`       | date of death                     | 2018-12-19T00:00:00.000Z |
 | dob             |         | `isodate`       | date of birth                     | 1946-04-11T00:00:00.000Z |
-| email           |    *    | `string`        | email of the claimant             | contact1@mail.com |
-| phone           |         | `string`        | mobile phone of the claimant      | +33600000000 |
 | db              |         | `string`        | database's location               | `us`or `eu` |
 | zone            |         | `string`        | zone 's location                  | `fr,us,mx,de,es,be,ch` |
 | gender          |         | `string`        | `m` or `f`                        | |
@@ -81,8 +79,7 @@ For better security we recommend passing the `jwt` in the request `authorization
 ### Example
 - `jwt` token is `xxx`
 - deceased name is `Paul Cezane`
-- primary claimant is `Alice Smith`
-- secondary contact is `Bob Stuart`
+- managers are `alice` & `bob`  
 
   ```curl
     curl -X POST 'https://api.inmemori-dev.com/pages' \
@@ -93,27 +90,35 @@ For better security we recommend passing the `jwt` in the request `authorization
             , "lastname": "cezane"
             , "dod": "2018-12-19T00:00:00.000Z"
             , "dob": "1964-04-12T00:00:00.000Z"
-            , "email": "alice@gmail.com"
-            , "phone": "+33600000001"
             , "places": [
-                { 
-                    "name": "Cimetière de Montparnasse"
+                {
+                    "type": "ceremony"
                   , "address": "3 rue de Rivoli, 75014 Paris"
-                  , "type": "ceremony"
+                  , "name": "Cimetière de Montparnasse"
                   , "date": "2018-12-19T11:45:00.000Z"
+                },
+                {
+                    "type": "internment"
+                  , "address": "14 avenue des Rois, 75011 Paris"
+                  , "name": "Chapelle Sixteen"
+                  , "date": "2018-12-20T19:30:00.000Z"
                 }
               ]
             , "contacts": [
                 { 
-                    "name": "Bob Stuart"
+                    "name": "alice cezane"
+                  , "phone": "+33600000001"
+                  , "email": "alice@mail.com"
+                },
+                { 
+                    "name": "bob cezane"
                   , "phone": "+33600000002"
-                  , "email": "bob@gmail.com"
+                  , "email": "bob@mail.com"
                 }
               ] 
             , "meta": {
                   "author": "Marc Leblanc"
                 , "agency": "Pompes Funèbres République"
-                , "managerName": "Alice Smith"
               } 
           }'
   ```
