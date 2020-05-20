@@ -1,4 +1,4 @@
-# InMemori Http REST API  
+# InMemori API  
 
 ### Server
 
@@ -10,15 +10,15 @@
 <br/>  
 
 This API accepts only `json` as content type.  
+There is only one endpoint (`/pages`) on this API.
 
 ### Identification
 
-Provide your `jwt` token in the `body` or `query` of each requests made to this API.  
-For better security we recommend passing the `jwt` in the request `authorization` header (see exemple at the end).
+On the `dev` api, you can provide your `jwt` token in the `body` or `query` of the requests, but on the `production` api we we recommend passing the `jwt` in the request `authorization` header (see exemple at the end).
 
 ## Create a page
 
-### `POST /pages`
+### Http POST request on `/pages`
 
 
 | Fields          | required| Type           | Info                               | ex:                            |
