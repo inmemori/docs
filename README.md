@@ -123,10 +123,6 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
           }'
   ```
   
-  
-  ## Delete a page
-
-To delete a previously created page, call the endpoint  `PUT /pages/{slug}/cancel`
 
 ## Delete a page
 
