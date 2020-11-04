@@ -9,17 +9,87 @@
 
 <br/>  
 
-This API accepts only `json` as content type.  
-There is only one endpoint (`/pages`) on this API.
+This API consist of a single endpoint `/pages` which only accepts `json` as content type.  
 
 ### Identification
 
 On the `dev` api, you can provide your `jwt` token in the `body` or `query` of the requests, but on the `production` api we we recommend passing the `jwt` in the request `authorization` header (see exemple at the end).
 
-## Create a page
+### Create a Page
 
-### Http POST request on `/pages`
+To create a page, just make a POST request on the `/pages` api endpoint.  
 
+  ```curl
+    curl -X POST 'https://api.inmemori-dev.com/pages' \
+      -H 'authorization: JWT xxx'
+      -H 'content-type: application/json' \
+      -d '{ 
+              "firstname": "paul"
+            , "lastname": "cezane"
+            , "dod": "2018-12-19T00:00:00.000Z"
+            , "dob": "1964-04-12T00:00:00.000Z"
+            , "places": [
+                {
+                    "type": "ceremony"
+                  , "address": "3 rue de Rivoli, 75014 Paris"
+                  , "name": "Cimetière de Montparnasse"
+                  , "date": "2018-12-19T11:45:00.000Z"
+                },
+                {
+                    "type": "internment"
+                  , "address": "14 avenue des Rois, 75011 Paris"
+                  , "name": "Chapelle Sixteen"
+                  , "date": "2018-12-20T19:30:00.000Z"
+                }
+              ]
+            , "contacts": [
+                { 
+                    "name": "alice cezane"
+                  , "phone": "+33600000001"
+                  , "email": "alice@mail.com"
+                },
+                { 
+                    "name": "bob cezane"
+                  , "phone": "+33600000002"
+                  , "email": "bob@mail.com"
+                }
+              ] 
+            , "partner": {
+                  "name": "PFG"
+                , "code": "P8955"
+              } 
+            , "agency": {
+                  "name": "PF d'aix en provence"
+                , "code": "A13100"
+              } 
+            , "counselor": {
+                  "firstname": "Bruce"
+                , "lastname": "Wayne"
+                , "code": "C420"
+                , "email": "bruce.wayne@mail.com"
+              } 
+          }'
+  ```
+  
+On success, the response will return a `200` with the json `page` object.  
+
+```json
+{ 
+    "slug": "pcezane-e45s3"
+  , "firstname": "paul"
+  , "lastname": "cezane"
+  , "dod": "2018-12-19T00:00:00.000Z"
+  , "dob": "1964-04-12T00:00:00.000Z"
+  , ...
+} 
+```
+
+You might want to save the `slug` attribute in your database. It's the Inmemori page ID, and is necessery for you to have if you want to access more advanced endpoint on our API.
+
+
+## Data Schemas
+
+#### Page Schema
 
 | Fields          | required| Type               | Info                              | ex:                            |
 |-----------------|---------|--------------------|-----------------------------------|--------------------------------|
@@ -34,9 +104,7 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
 | partner         |         | `object(partner)`  |                                   | see **partner** schema |
 | agency          |         | `object(agency)`   |                                   | see **agency** schema |
 | counselor       |         | `object(counselor)`|                                   | see **counselor** schema |
-| meta            |         | `object`           |                                   | see **meta** schema |
-
-
+| meta            |         | `object(meta)`     |                                   | see **meta** schema |
 
 #### Place Schema (information on the ceremonies)
 
@@ -94,61 +162,3 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
 | phone           | `string `      | counselor phone                   | +33608998877 |
 | note            | `string `      | additional information            | any comment |
 
-
-
-### Example
-- `jwt` token is `xxx`
-- deceased name is `Paul Cezane`
-- managers are `alice` & `bob`  
-
-  ```curl
-    curl -X POST 'https://api.inmemori-dev.com/pages' \
-      -H 'authorization: JWT xxx'
-      -H 'content-type: application/json' \
-      -d '{ 
-              "firstname": "paul"
-            , "lastname": "cezane"
-            , "dod": "2018-12-19T00:00:00.000Z"
-            , "dob": "1964-04-12T00:00:00.000Z"
-            , "places": [
-                {
-                    "type": "ceremony"
-                  , "address": "3 rue de Rivoli, 75014 Paris"
-                  , "name": "Cimetière de Montparnasse"
-                  , "date": "2018-12-19T11:45:00.000Z"
-                },
-                {
-                    "type": "internment"
-                  , "address": "14 avenue des Rois, 75011 Paris"
-                  , "name": "Chapelle Sixteen"
-                  , "date": "2018-12-20T19:30:00.000Z"
-                }
-              ]
-            , "contacts": [
-                { 
-                    "name": "alice cezane"
-                  , "phone": "+33600000001"
-                  , "email": "alice@mail.com"
-                },
-                { 
-                    "name": "bob cezane"
-                  , "phone": "+33600000002"
-                  , "email": "bob@mail.com"
-                }
-              ] 
-            , "partner": {
-                  "name": "PFG"
-                , "code": "P8955"
-              } 
-            , "agency": {
-                  "name": "PF d'aix en provence"
-                , "code": "A13100"
-              } 
-            , "counselor": {
-                  "firstname": "Bruce"
-                , "lastname": "Wayne"
-                , "code": "C420"
-                , "email": "bruce.wayne@mail.com"
-              } 
-          }'
-  ```
