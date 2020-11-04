@@ -21,22 +21,24 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
 ### Http POST request on `/pages`
 
 
-| Fields          | required| Type           | Info                               | ex:                            |
-|-----------------|---------|----------------|------------------------------------|--------------------------------|
-| firstname       |    *    | `string`        | firstname of the deceased         | |
-| lastname        |    *    | `string`        | lastname of the deceased          | |
-| dod             |         | `isodate`       | date of death                     | 2018-12-19T00:00:00.000Z |
-| dob             |         | `isodate`       | date of birth                     | 1946-04-11T00:00:00.000Z |
-| db              |         | `string`        | database's location               | `us`or `eu` |
-| zone            |         | `string`        | zone 's location                  | `fr,us,mx,de,es,be,ch` |
-| gender          |         | `string`        | `m` or `f`                        | |
-| places          |         | `array(place)`  |                                   | see **place** schema |
-| contacts        |         | `array(contact)`|                                   | see **contact** schema |
-| meta            |         | `object`        |                                   | see **meta** schema |
+| Fields          | required| Type               | Info                              | ex:                            |
+|-----------------|---------|--------------------|-----------------------------------|--------------------------------|
+| firstname       |    *    | `string`           | firstname of the deceased         | |
+| lastname        |    *    | `string`           | lastname of the deceased          | |
+| dod             |         | `isodate`          | date of death                     | 2018-12-19T00:00:00.000Z |
+| dob             |         | `isodate`          | date of birth                     | 1946-04-11T00:00:00.000Z |
+| zone            |         | `string`           | zone 's location                  | `fr,us,mx,de,es,be,ch` |
+| gender          |         | `string`           | `m` or `f`                        | |
+| places          |         | `array(place)`     |                                   | see **place** schema |
+| contacts        |         | `array(contact)`   |                                   | see **contact** schema |
+| partner         |         | `object(partner)`  |                                   | see **partner** schema |
+| agency          |         | `object(agency)`   |                                   | see **agency** schema |
+| counselor       |         | `object(counselor)`|                                   | see **counselor** schema |
+| meta            |         | `object`           |                                   | see **meta** schema |
 
 
 
-#### Place Schema : information on the ceremonies
+#### Place Schema (information on the ceremonies)
 
 
 | Fields          | Type           | Info                | ex:                            |
@@ -46,11 +48,10 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
 | type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
-| privacy         | `boolean`      | default `false`     |     |
 
 
 
-#### Contact Schema : information on the contacts/managers of the page
+#### Contact Schema (contacts are the managers of the page)
 
 
 | Fields          | Type           | Info                              | ex:                            |
@@ -62,17 +63,36 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
 | address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
 
 
+#### Partner Schema
 
-#### Meta Schema : additionnal page informations
+| Fields          | Type           | Info                            | ex:                            |
+|-----------------|----------------|---------------------------------|--------------------------------|
+| name            | `string `, *   | partner name                    | PFG |
+| code            | `string `, *   | partner ID                      | P8955 |
+| email           | `string `      | partner email                   | pfg@mail.com |
+| phone           | `string `      | partner phone                   | +33608998877 |
+| note            | `string `      | additional information          | any comment |
 
+#### Agency Schema
+
+| Fields          | Type           | Info                           | ex:                            |
+|-----------------|----------------|--------------------------------|--------------------------------|
+| name            | `string `, *   | agency name                    | PF d'aix en provence |
+| code            | `string `, *   | agency ID                      | A13100 |
+| email           | `string `      | agency email                   | pf.aix@mail.com |
+| phone           | `string `      | agency phone                   | +33608998877 |
+| note            | `string `      | additional information         | any comment |
+
+#### Counselor Schema
 
 | Fields          | Type           | Info                              | ex:                            |
 |-----------------|----------------|-----------------------------------|--------------------------------|
-| author          | `string `      | counselor's name                  | Marc Leblanc |
-| agency          | `string `      | agency's name                     | Smith Funeral services / Pompes Funèbres République |
-| agency_code     | `string `      | identification number if any      | AGC01 |
-| note            | `string `      | additional information            | comments if any |
-| managerName     | `string `      | primary claimant name             | Alice Smith |
+| firstname       | `string `, *   | counselor firstname               | Bruce |
+| lastname        | `string `, *   | counselor lastname                | Wayne |
+| code            | `string `, *   | counselor ID                      | C420 |
+| email           | `string `, *   | counselor email                   | bruce.wayne@mail.com |
+| phone           | `string `      | counselor phone                   | +33608998877 |
+| note            | `string `      | additional information            | any comment |
 
 
 
@@ -116,24 +136,19 @@ On the `dev` api, you can provide your `jwt` token in the `body` or `query` of t
                   , "email": "bob@mail.com"
                 }
               ] 
-            , "meta": {
-                  "author": "Marc Leblanc"
-                , "agency": "Pompes Funèbres République"
+            , "partner": {
+                  "name": "PFG"
+                , "code": "P8955"
+              } 
+            , "agency": {
+                  "name": "PF d'aix en provence"
+                , "code": "A13100"
+              } 
+            , "counselor": {
+                  "firstname": "Bruce"
+                , "lastname": "Wayne"
+                , "code": "C420"
+                , "email": "bruce.wayne@mail.com"
               } 
           }'
   ```
-  
-
-## Delete a page
-
-To delete a previously created page, call the endpoint  `PUT /pages/{slug}/cancel`
-
-### Example
-
-- `jwt` token is `xxx`
-- page slug (id) is `mdaricout-ex43r`
-
-```curl
-curl -X PUT 'https://api.inmemori-dev.com/pages/mdaricout-ex43r/cancel' \
-  -H 'authorization: JWT xxx'
-```
