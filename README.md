@@ -10,7 +10,7 @@
 <br/>  
 
 This API consist of a single endpoint `/pages` which only accepts `json` as content type.  
-Each partner is given a JWT ApiKey that needs to be passed at page creation. If you operate on behalf of multiple partners, you will need multiple apikeys. Apikeys are delivered on demand by Inmemori business team at partners@inmemori.com
+Each partner is given a JWT ApiKey that needs to be passed at page creation. If you operate on behalf of multiple partners, you will need multiple apikeys. You can request apikeys at partners@inmemori.com
 
 ### Identification
 
