@@ -137,7 +137,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 |-----------------|----------------|---------------------------------|--------------------------------|
 | name            | `string `      | partner name                    | PF |
 | code            | `string `      | partner ID                      | P8955 |
-| email           | `string `      | partner email                   | pfg@mail.com |
+| email           | `string `      | partner email                   | pf@mail.com |
 | phone           | `string `      | partner phone                   | +33608998877 |
 | note            | `string `      | additional information          | any comment |
 
