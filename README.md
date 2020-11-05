@@ -115,7 +115,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | tz            | `string`       | time zone| a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) `Europe/Paris`, `America/Mexico_City`...  |
 | name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
 | address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
-| type            | `string`       | `ceremony`, `contemplation`, `interment` or `cremation`|     |
+| type            | `string`       | `ceremony`, `contemplation`, `interment`, `reception`, `gathering` or `cremation`|     |
 
 
 
