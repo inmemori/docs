@@ -135,8 +135,8 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 | Fields          | Type           | Info                            | ex:                            |
 |-----------------|----------------|---------------------------------|--------------------------------|
-| name            | `string `, *   | partner name                    | PFG |
-| code            | `string `, *   | partner ID                      | P8955 |
+| name            | `string `      | partner name                    | PFG |
+| code            | `string `      | partner ID                      | P8955 |
 | email           | `string `      | partner email                   | pfg@mail.com |
 | phone           | `string `      | partner phone                   | +33608998877 |
 | note            | `string `      | additional information          | any comment |
@@ -145,8 +145,8 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 | Fields          | Type           | Info                           | ex:                            |
 |-----------------|----------------|--------------------------------|--------------------------------|
-| name            | `string `, *   | agency name                    | PF d'aix en provence |
-| code            | `string `, *   | agency ID                      | A13100 |
+| name            | `string `      | agency name                    | PF d'aix en provence |
+| code            | `string `      | agency ID                      | A13100 |
 | email           | `string `      | agency email                   | pf.aix@mail.com |
 | phone           | `string `      | agency phone                   | +33608998877 |
 | note            | `string `      | additional information         | any comment |
