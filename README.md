@@ -91,20 +91,20 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 #### Page Schema
 
-| Fields          | required| Type               | Info                              | ex:                            |
-|-----------------|---------|--------------------|-----------------------------------|--------------------------------|
-| firstname       |    *    | `string`           | firstname of the deceased         | |
-| lastname        |    *    | `string`           | lastname of the deceased          | |
-| dod             |         | `isodate`          | date of death                     | 2018-12-19T00:00:00.000Z |
-| dob             |         | `isodate`          | date of birth                     | 1946-04-11T00:00:00.000Z |
-| zone            |         | `string`           | zone 's location                  | `fr,us,mx,de,es,be,ch` |
-| gender          |         | `string`           | `m` or `f`                        | |
-| places          |         | `array(place)`     |                                   | see **place** schema |
-| contacts        |         | `array(contact)`   |                                   | see **contact** schema |
-| partner         |         | `object(partner)`  |                                   | see **partner** schema |
-| agency          |         | `object(agency)`   |                                   | see **agency** schema |
-| counselor       |         | `object(counselor)`|                                   | see **counselor** schema |
-| meta            |         | `object(meta)`     |                                   | see **meta** schema |
+| Fields          | Type               | Info                              | ex:                            |
+|-----------------|--------------------|-----------------------------------|--------------------------------|
+| firstname       | `string`           | firstname of the deceased         | |
+| lastname        | `string`           | lastname of the deceased          | |
+| dod             | `isodate`          | date of death                     | 2018-12-19T00:00:00.000Z |
+| dob             | `isodate`          | date of birth                     | 1946-04-11T00:00:00.000Z |
+| zone            | `string`           | zone 's location                  | `fr,us,mx,de,es,be,ch` |
+| gender          | `string`           | `m` or `f`                        | |
+| places          | `array(place)`     |                                   | see **place** schema |
+| contacts        | `array(contact)`   |                                   | see **contact** schema |
+| partner         | `object(partner)`  |                                   | see **partner** schema |
+| agency          | `object(agency)`   |                                   | see **agency** schema |
+| counselor       | `object(counselor)`|                                   | see **counselor** schema |
+| meta            | `object(meta)`     |                                   | see **meta** schema |
 
 #### Place Schema (information on the ceremonies)
 
