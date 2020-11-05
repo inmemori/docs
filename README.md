@@ -24,11 +24,14 @@ To create a page, just make a POST request on the `/pages` api endpoint.
       -H 'authorization: JWT xxx'
       -H 'content-type: application/json' \
       -d '{ 
-              "firstname": "paul"
-            , "lastname": "cezane"
-            , "dod": "2018-12-19T00:00:00.000Z"
-            , "dob": "1964-04-12T00:00:00.000Z"
-            , "places": [
+              "defunct": {
+                  "firstname": "paul"
+                , "lastname": "cezane"
+                , "dod": "2018-12-19T00:00:00.000Z"
+                , "dob": "1964-04-12T00:00:00.000Z"
+                , "gender": "m"
+              }
+             , "places": [
                 {
                     "type": "ceremony"
                   , "address": "3 rue de Rivoli, 75014 Paris"
@@ -99,17 +102,23 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 | Fields          | Type               | Info                              | ex:                            |
 |-----------------|--------------------|-----------------------------------|--------------------------------|
+| defunct         | `object(defunct)`  |                                   | see **defunct** schema |
+| contacts        | `array(contact)`   |                                   | see **contact** schema |
+| places          | `array(place)`     |                                   | see **place** schema |
+| agency          | `object(agency)`   |                                   | see **agency** schema |
+| counselor       | `object(counselor)`|                                   | see **counselor** schema |
+| segments        | `object(segment)`  |                                   | see **segment** schema |
+
+
+#### Defunct Schema
+
+| Fields          | Type               | Info                              | ex:                            |
+|-----------------|--------------------|-----------------------------------|--------------------------------|
 | firstname       | `string`           | firstname of the deceased         | |
 | lastname        | `string`           | lastname of the deceased          | |
 | dod             | `isodate`          | date of death                     | 2018-12-19T00:00:00.000Z |
 | dob             | `isodate`          | date of birth                     | 1946-04-11T00:00:00.000Z |
-| zone            | `string`           | zone 's location                  | `fr,us,mx,de,es,be,ch` |
 | gender          | `string`           | `m` or `f`                        | |
-| places          | `array(place)`     |                                   | see **place** schema |
-| contacts        | `array(contact)`   |                                   | see **contact** schema |
-| segments        | `object(segment)`  |                                   | see **segment** schema |
-| agency          | `object(agency)`   |                                   | see **agency** schema |
-| counselor       | `object(counselor)`|                                   | see **counselor** schema |
 
 
 #### Place Schema (information on the ceremonies)
