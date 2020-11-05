@@ -68,6 +68,16 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                 , "code": "C420"
                 , "email": "bruce.wayne@mail.com"
               } 
+            , "segments": [
+                {
+                    "name": "PACA"
+                  , "code": "CD345"
+                },
+                {
+                    "name": "Bouches du rhones"
+                  , "code": "ZS456"
+                }
+              ]
           }'
   ```
   
@@ -101,7 +111,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | gender          | `string`           | `m` or `f`                        | |
 | places          | `array(place)`     |                                   | see **place** schema |
 | contacts        | `array(contact)`   |                                   | see **contact** schema |
-| partner         | `object(partner)`  |                                   | see **partner** schema |
+| segments        | `object(segment)`  |                                   | see **segment** schema |
 | agency          | `object(agency)`   |                                   | see **agency** schema |
 | counselor       | `object(counselor)`|                                   | see **counselor** schema |
 | meta            | `object(meta)`     |                                   | see **meta** schema |
@@ -164,4 +174,11 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | email           | `string `   | counselor email                   | bruce.wayne@mail.com |
 | phone           | `string `   | counselor phone                   | +33608998877 |
 | note            | `string `   | additional information            | any comment |
+
+### Segment Schema
+
+| Fields          | Type        | Info                              | ex:                            |
+|-----------------|-------------|-----------------------------------|--------------------------------|
+| name            | `string `   | segment name                      | Région PACA |
+| code            | `string `   | segment ID                        | Z345 |
 
