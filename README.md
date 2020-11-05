@@ -9,7 +9,8 @@
 
 <br/>  
 
-This API consist of a single endpoint `/pages` which only accepts `json` as content type.  
+This API consist of a single endpoint `/pages` which only accepts `json` as content type. 
+Each partner is given a JWT ApiKey that needs to be passed at page creation.
 
 ### Identification
 
