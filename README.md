@@ -55,7 +55,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                 }
               ] 
             , "partner": {
-                  "name": "PFG"
+                  "name": "PF"
                 , "code": "P8955"
               } 
             , "agency": {
@@ -135,7 +135,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 | Fields          | Type           | Info                            | ex:                            |
 |-----------------|----------------|---------------------------------|--------------------------------|
-| name            | `string `      | partner name                    | PFG |
+| name            | `string `      | partner name                    | PF |
 | code            | `string `      | partner ID                      | P8955 |
 | email           | `string `      | partner email                   | pfg@mail.com |
 | phone           | `string `      | partner phone                   | +33608998877 |
