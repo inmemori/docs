@@ -53,11 +53,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                   , "phone": "+33600000002"
                   , "email": "bob@mail.com"
                 }
-              ] 
-            , "partner": {
-                  "name": "PF"
-                , "code": "P8955"
-              } 
+              ]
             , "agency": {
                   "name": "PF d'aix en provence"
                 , "code": "A13100"
@@ -140,18 +136,6 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | email           | `string `      | contact email                     | bob@mail.com |
 | relationship    | `string `      | relationship to the deceased      | child/parent/friend |
 | address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
-
-
-#### Partner Schema
-
-| Fields          | Type           | Info                            | ex:                            |
-|-----------------|----------------|---------------------------------|--------------------------------|
-| name            | `string `      | partner name                    | PF |
-| code            | `string `      | partner ID                      | P8955 |
-| email           | `string `      | partner email                   | pf@mail.com |
-| phone           | `string `      | partner phone                   | +33608998877 |
-| landline        | `string `      | landline number (tel fix)       | +33100000000 |
-| note            | `string `      | additional information          | any comment |
 
 #### Agency Schema
 
