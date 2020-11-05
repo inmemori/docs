@@ -13,7 +13,7 @@ This API consist of a single endpoint `/pages` which only accepts `json` as cont
 
 ### Identification
 
-On the `dev` api, you can provide your `jwt` token in the `body` or `query` of the requests, but on the `production` api we we recommend passing the `jwt` in the request `authorization` header (see exemple at the end).
+On the `dev` api, you can provide your `jwt` token in the `body` or `query` of the requests, but on the `production` api we we recommend passing the `jwt` in the request `authorization` header (see exemple below).
 
 ### Create a Page
 
@@ -98,19 +98,19 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 ## Data Schemas
 
-#### Page Schema
+#### Page (Main schema)
 
 | Fields          | Type               | Info                              | ex:                            |
 |-----------------|--------------------|-----------------------------------|--------------------------------|
-| defunct         | `object(defunct)`  |                                   | see **defunct** schema |
-| contacts        | `array(contact)`   |                                   | see **contact** schema |
-| places          | `array(place)`     |                                   | see **place** schema |
-| agency          | `object(agency)`   |                                   | see **agency** schema |
-| counselor       | `object(counselor)`|                                   | see **counselor** schema |
-| segments        | `object(segment)`  |                                   | see **segment** schema |
+| defunct         | `object(defunct)`  | defunct infos                     | see **defunct** schema |
+| contacts        | `array(contact)`   | managers of the page              | see **contact** schema |
+| places          | `array(place)`     | ceremonies infos                  | see **place** schema |
+| agency          | `object(agency)`   | agency infos                      | see **agency** schema |
+| counselor       | `object(counselor)`| counselor infos                   | see **counselor** schema |
+| segments        | `object(segment)`  | CRM segmentations                 | see **segment** schema |
 
 
-#### Defunct Schema
+#### Defunct
 
 | Fields          | Type               | Info                              | ex:                            |
 |-----------------|--------------------|-----------------------------------|--------------------------------|
@@ -121,8 +121,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | gender          | `string`           | `m` or `f`                        | |
 
 
-#### Place Schema (information on the ceremonies)
-
+#### Place (Array of place)
 
 | Fields          | Type           | Info                | ex:                            |
 |-----------------|----------------|---------------------|--------------------------------|
@@ -133,9 +132,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | type            | `string`       | `ceremony`, `contemplation`, `interment`, `reception`, `gathering` or `cremation`|     |
 
 
-
-#### Contacts Schema (contacts are the different managers of the page)
-
+#### Contact (Array of contact)
 
 | Fields          | Type           | Info                              | ex:                            |
 |-----------------|----------------|-----------------------------------|--------------------------------|
@@ -146,7 +143,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | relationship    | `string `      | relationship to the deceased      | child/parent/friend |
 | address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
 
-#### Agency Schema
+#### Agency
 
 | Fields          | Type           | Info                           | ex:                            |
 |-----------------|----------------|--------------------------------|--------------------------------|
@@ -157,7 +154,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | landline        | `string `      | landline number (tel fix)      | +33100000000 |
 | note            | `string `      | additional information         | any comment |
 
-#### Counselor Schema
+#### Counselor
 
 | Fields          | Type        | Info                              | ex:                            |
 |-----------------|-------------|-----------------------------------|--------------------------------|
@@ -168,7 +165,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | phone           | `string `   | counselor phone                   | +33608998877 |
 | note            | `string `   | additional information            | any comment |
 
-### Segment Schema
+#### Segment
 
 | Fields          | Type        | Info                              | ex:                            |
 |-----------------|-------------|-----------------------------------|--------------------------------|
