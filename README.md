@@ -119,7 +119,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 
 
-#### Contact Schema (contacts are the managers of the page)
+#### Contacts Schema (contacts are the different managers of the page)
 
 
 | Fields          | Type           | Info                              | ex:                            |
