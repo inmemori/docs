@@ -70,7 +70,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                   , "code": "CD345"
                 },
                 {
-                    "name": "Bouches du rhones"
+                    "name": "Bouches du rhone"
                   , "code": "ZS456"
                 }
               ]
@@ -110,7 +110,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | segments        | `object(segment)`  |                                   | see **segment** schema |
 | agency          | `object(agency)`   |                                   | see **agency** schema |
 | counselor       | `object(counselor)`|                                   | see **counselor** schema |
-| meta            | `object(meta)`     |                                   | see **meta** schema |
+
 
 #### Place Schema (information on the ceremonies)
 
