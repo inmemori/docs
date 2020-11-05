@@ -125,7 +125,8 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | Fields          | Type           | Info                              | ex:                            |
 |-----------------|----------------|-----------------------------------|--------------------------------|
 | name            | `string `      | Fullname of the claimant          | Bob Stuart |
-| phone           | `string `      | contact mobile number             | +33600000000 |
+| phone           | `string `      | mobile number                     | +33600000000 |
+| landline        | `string `      | landline number (tel fix)         | +33100000000 |
 | email           | `string `      | contact email                     | bob@mail.com |
 | relationship    | `string `      | relationship to the deceased      | child/parent/friend |
 | address         | `string `      | contact perosnal address          | 20 rue du Louvre, 75001 Paris |
@@ -139,6 +140,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | code            | `string `      | partner ID                      | P8955 |
 | email           | `string `      | partner email                   | pf@mail.com |
 | phone           | `string `      | partner phone                   | +33608998877 |
+| landline        | `string `      | landline number (tel fix)       | +33100000000 |
 | note            | `string `      | additional information          | any comment |
 
 #### Agency Schema
@@ -149,6 +151,7 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 | code            | `string `      | agency ID                      | A13100 |
 | email           | `string `      | agency email                   | pf.aix@mail.com |
 | phone           | `string `      | agency phone                   | +33608998877 |
+| landline        | `string `      | landline number (tel fix)      | +33100000000 |
 | note            | `string `      | additional information         | any comment |
 
 #### Counselor Schema
