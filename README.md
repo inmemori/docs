@@ -153,12 +153,12 @@ You might want to save the `slug` attribute in your database. It's the Inmemori 
 
 #### Counselor Schema
 
-| Fields          | Type           | Info                              | ex:                            |
-|-----------------|----------------|-----------------------------------|--------------------------------|
-| firstname       | `string `, *   | counselor firstname               | Bruce |
-| lastname        | `string `, *   | counselor lastname                | Wayne |
-| code            | `string `, *   | counselor ID                      | C420 |
-| email           | `string `, *   | counselor email                   | bruce.wayne@mail.com |
-| phone           | `string `      | counselor phone                   | +33608998877 |
-| note            | `string `      | additional information            | any comment |
+| Fields          | Type        | Info                              | ex:                            |
+|-----------------|-------------|-----------------------------------|--------------------------------|
+| firstname       | `string `   | counselor firstname               | Bruce |
+| lastname        | `string `   | counselor lastname                | Wayne |
+| code            | `string `   | counselor ID                      | C420 |
+| email           | `string `   | counselor email                   | bruce.wayne@mail.com |
+| phone           | `string `   | counselor phone                   | +33608998877 |
+| note            | `string `   | additional information            | any comment |
 
