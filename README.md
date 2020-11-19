@@ -32,6 +32,17 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                 , "dob": "1964-04-12T00:00:00.000Z"
                 , "gender": "m"
               }
+            , "agency": {
+                  "name": "PF d'aix en provence"
+                , "code": "A13100"
+                , "email": "pf.aix@mail.com"
+              } 
+            , "counselor": {
+                  "firstname": "Bruce"
+                , "lastname": "Wayne"
+                , "code": "C420"
+                , "email": "bruce.wayne@mail.com"
+              }
              , "places": [
                 {
                     "type": "ceremony"
@@ -58,18 +69,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                   , "phone": "+33600000002"
                   , "email": "bob@mail.com"
                 }
-              ]
-            , "agency": {
-                  "name": "PF d'aix en provence"
-                , "code": "A13100"
-                , "email": "pf.aix@mail.com"
-              } 
-            , "counselor": {
-                  "firstname": "Bruce"
-                , "lastname": "Wayne"
-                , "code": "C420"
-                , "email": "bruce.wayne@mail.com"
-              } 
+              ] 
             , "segments": [
                 {
                     "name": "PACA"
