@@ -106,14 +106,14 @@ You might want to save the `_id` attribute in your database.
 | Fields          | Type               | Info                              | ex:                            |
 |-----------------|--------------------|-----------------------------------|--------------------------------|
 | defunct         | `object(defunct)`  | defunct infos                     | see **defunct** schema |
-| contacts        | `array(contact)`   | managers of the page              | see **contact** schema |
-| places          | `array(place)`     | ceremonies infos                  | see **place** schema |
 | agency          | `object(agency)`   | agency infos                      | see **agency** schema |
 | counselor       | `object(counselor)`| counselor infos                   | see **counselor** schema |
-| segments        | `object(segment)`  | CRM segmentations                 | see **segment** schema |
+| contacts        | `array(contact)`   | pages managers                    | see **contact** schema |
+| places          | `array(place)`     | ceremonies infos                  | see **place** schema |
+| segments        | `array(segment)`   | CRM segmentations                 | see **segment** schema |
 
 
-#### Defunct
+#### Defunct (Object)
 
 | Fields          | Type               | Info                              | ex:                            |
 |-----------------|--------------------|-----------------------------------|--------------------------------|
@@ -123,30 +123,7 @@ You might want to save the `_id` attribute in your database.
 | dob             | `isodate`          | date of birth                     | 1946-04-11T00:00:00.000Z |
 | gender          | `string`           | `m` or `f`                        | |
 
-
-#### Place (Array of place)
-
-| Fields          | Type           | Info                | ex:                            |
-|-----------------|----------------|---------------------|--------------------------------|
-| date            | `isodate`      | date of ceremony at Zulu time (UTC-0)| ex: for an event the 03 dec at 10:30AM in Paris, the correct date would be `2020-12-03T09:30:00.000Z`       |
-| tz            | `string`       | time zone| a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) `Europe/Paris`, `America/Mexico_City`...  |
-| name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
-| address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
-| type            | `string`       | `ceremony`, `contemplation`, `interment`, `reception`, `gathering` or `cremation`|     |
-
-
-#### Contact (Array of contact)
-
-| Fields          | Type           | Info                              | ex:                            |
-|-----------------|----------------|-----------------------------------|--------------------------------|
-| name            | `string `      | Fullname of the claimant          | Bob Stuart |
-| phone           | `string `      | mobile number                     | +33600000000 |
-| landline        | `string `      | landline number (tel fixe)         | +33100000000 |
-| email           | `string `      | contact email                     | bob@mail.com |
-| relationship    | `string `      | relationship to the deceased      | child/parent/friend |
-| address         | `string `      | contact personal address          | 20 rue du Louvre, 75001 Paris |
-
-#### Agency
+#### Agency (Object)
 
 | Fields          | Type           | Info                           | ex:                            |
 |-----------------|----------------|--------------------------------|--------------------------------|
@@ -157,7 +134,7 @@ You might want to save the `_id` attribute in your database.
 | landline        | `string `      | landline number (tel fixe)      | +33100000000 |
 | note            | `string `      | additional information         | any comment |
 
-#### Counselor
+#### Counselor (Object)
 
 | Fields          | Type        | Info                              | ex:                            |
 |-----------------|-------------|-----------------------------------|--------------------------------|
@@ -168,7 +145,29 @@ You might want to save the `_id` attribute in your database.
 | phone           | `string `   | counselor phone                   | +33608998877 |
 | note            | `string `   | additional information            | any comment |
 
-#### Segment
+#### Place (Array of places)
+
+| Fields          | Type           | Info                | ex:                            |
+|-----------------|----------------|---------------------|--------------------------------|
+| date            | `isodate`      | date of ceremony at Zulu time (UTC-0)| ex: for an event the 03 dec at 10:30AM in Paris, the correct date would be `2020-12-03T09:30:00.000Z`       |
+| tz            | `string`       | time zone| a valid [timezone](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) `Europe/Paris`, `America/Mexico_City`...  |
+| name            | `string`       | location of ceremony| Trinity Cemetery ; Cimetière de Montparnasse      |
+| address         | `string`       | adress of ceremony  | West 155th Street, New York, NY, USA ; 3 rue de Rivoli, 75014 Paris 
+| type            | `string`       | `ceremony`, `contemplation`, `interment`, `reception`, `gathering` or `cremation`|     |
+
+
+#### Contact (Array of contacts)
+
+| Fields          | Type           | Info                              | ex:                            |
+|-----------------|----------------|-----------------------------------|--------------------------------|
+| name            | `string `      | Fullname of the claimant          | Bob Stuart |
+| phone           | `string `      | mobile number                     | +33600000000 |
+| landline        | `string `      | landline number (tel fixe)         | +33100000000 |
+| email           | `string `      | contact email                     | bob@mail.com |
+| relationship    | `string `      | relationship to the deceased      | child/parent/friend |
+| address         | `string `      | contact personal address          | 20 rue du Louvre, 75001 Paris |
+
+#### Segment (Array of segments)
 
 | Fields          | Type        | Info                              | ex:                            |
 |-----------------|-------------|-----------------------------------|--------------------------------|
