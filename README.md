@@ -51,7 +51,7 @@ To create a page, just make a POST request on the `/pages` api endpoint.
                   , "date": "2018-12-19T11:45:00.000Z"
                 },
                 {
-                    "type": "internment"
+                    "type": "inhumation"
                   , "address": "14 avenue des Rois, 75011 Paris"
                   , "name": "Chapelle Sixteen"
                   , "date": "2018-12-20T19:30:00.000Z"
