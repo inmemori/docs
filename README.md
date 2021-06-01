@@ -16,72 +16,73 @@ Each partner is given a JWT apikey token that needs to be passed at page creatio
 
 On the `dev` api, you can provide your `jwt` token in the `body` or `query` of the requests, but on the `production` api we we recommend passing the `jwt` in the request `authorization` header (see exemple below).
 
+
 ### Create a Page
 
 To create a page, just make a POST request on the `/pages` api endpoint.  
 
-  ```curl
-    curl -X POST 'https://api.inmemori-dev.com/pages' \
-      -H 'authorization: JWT xxx'
-      -H 'content-type: application/json' \
-      -d '{ 
-              "defunct": {
-                  "firstname": "paul"
-                , "lastname": "cezane"
-                , "dod": "2018-12-19T00:00:00.000Z"
-                , "dob": "1964-04-12T00:00:00.000Z"
-                , "gender": "m"
-              }
-            , "agency": {
-                  "name": "PF d'aix en provence"
-                , "code": "A13100"
-                , "email": "pf.aix@mail.com"
-              } 
-            , "counselor": {
-                  "firstname": "Bruce"
-                , "lastname": "Wayne"
-                , "code": "C420"
-                , "email": "bruce.wayne@mail.com"
-              }
-             , "places": [
-                {
-                    "type": "ceremony"
-                  , "address": "3 rue de Rivoli, 75014 Paris"
-                  , "name": "Cimetière de Montparnasse"
-                  , "date": "2018-12-19T11:45:00.000Z"
-                },
-                {
-                    "type": "inhumation"
-                  , "address": "14 avenue des Rois, 75011 Paris"
-                  , "name": "Chapelle Sixteen"
-                  , "date": "2018-12-20T19:30:00.000Z"
-                }
-              ]
-            , "contacts": [
-                { 
-                    "name": "alice cezane"
-                  , "phone": "+33600000001"
-                  , "email": "alice@mail.com"
-                  , "relationship": "child"
-                },
-                { 
-                    "name": "bob cezane"
-                  , "phone": "+33600000002"
-                  , "email": "bob@mail.com"
-                }
-              ] 
-            , "segments": [
-                {
-                    "name": "PACA"
-                  , "code": "CD345"
-                },
-                {
-                    "name": "Bouches du rhone"
-                  , "code": "ZS456"
-                }
-              ]
-          }'
-  ```
+```curl
+curl -X POST 'https://api.inmemori-dev.com/pages' \
+  -H 'authorization: JWT xxx'
+  -H 'content-type: application/json' \
+  -d '{ 
+          "defunct": {
+              "firstname": "paul"
+            , "lastname": "cezane"
+            , "dod": "2018-12-19T00:00:00.000Z"
+            , "dob": "1964-04-12T00:00:00.000Z"
+            , "gender": "m"
+          }
+        , "agency": {
+              "name": "PF d'aix en provence"
+            , "code": "A13100"
+            , "email": "pf.aix@mail.com"
+          } 
+        , "counselor": {
+              "firstname": "Bruce"
+            , "lastname": "Wayne"
+            , "code": "C420"
+            , "email": "bruce.wayne@mail.com"
+          }
+         , "places": [
+            {
+                "type": "ceremony"
+              , "address": "3 rue de Rivoli, 75014 Paris"
+              , "name": "Cimetière de Montparnasse"
+              , "date": "2018-12-19T11:45:00.000Z"
+            },
+            {
+                "type": "inhumation"
+              , "address": "14 avenue des Rois, 75011 Paris"
+              , "name": "Chapelle Sixteen"
+              , "date": "2018-12-20T19:30:00.000Z"
+            }
+          ]
+        , "contacts": [
+            { 
+                "name": "alice cezane"
+              , "phone": "+33600000001"
+              , "email": "alice@mail.com"
+              , "relationship": "child"
+            },
+            { 
+                "name": "bob cezane"
+              , "phone": "+33600000002"
+              , "email": "bob@mail.com"
+            }
+          ] 
+        , "segments": [
+            {
+                "name": "PACA"
+              , "code": "CD345"
+            },
+            {
+                "name": "Bouches du rhone"
+              , "code": "ZS456"
+            }
+          ]
+      }'
+```
   
 On success, the response will return a `200` with the json `page` object.  
 
@@ -174,3 +175,22 @@ You might want to save the `_id` attribute in your database.
 | name            | `string `   | segment name                      | Région PACA |
 | code            | `string `   | segment ID                        | Z345 |
 
+
+<hr/>
+
+
+## Obtain a page access link
+
+Just provide a page `slug` to the following endpoint, it will reply with a page access link.
+
+```curl
+curl -X POST 'https://api.inmemori-dev.com/pro/link?slug=some-slug' \
+  -H 'authorization: JWT xxx'
+  -H 'content-type: application/json'
+```
+
+response: 
+
+```
+{ "link": "https://www.inmemori.com/some-slug?jwt=abcde..." }
+```
